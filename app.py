@@ -31,9 +31,9 @@ VIDEOS_PATH = (STREAMLIT_STATIC_PATH / "videos")
 if not VIDEOS_PATH.is_dir():
     VIDEOS_PATH.mkdir()
 
-uno_video = VIDEOS_PATH / "jahoperiChusconoticias.mp4"
+uno_video = VIDEOS_PATH / "jahoperi-chusconoticias.mp4"
 if not uno_video.exists():
-    shutil.copy("jahoperiChusconoticias.mp4", uno_video)  # For newer Python.
+    shutil.copy("jahoperi-chusconoticias.mp4", uno_video)  # For newer Python.
 
 
 
@@ -65,7 +65,7 @@ def main():
   </head>
   <body>
    <div class="main-div">
-    <video src = "videos/jahoperiChusconoticias.mp4" width="500" height="400" controls controlsList="nodownload"></video>
+    <video src = "videos/jahoperi-chusconoticias.mp4" width="500" height="400" controls controlsList="nodownload"></video>
 <script type="text/javascript">
 //Script for disabling right click on mouse
 var message="Function Disabled!";
