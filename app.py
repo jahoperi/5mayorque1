@@ -4,7 +4,24 @@ import shutil
 import streamlit as st
 import streamlit.components.v1 as components
 
+from streamlit_lottie import st_lottie  # pip install streamlit-lottie
+import requests  # pip install requests
 
+def load_lottieurl(url: str):
+    r = requests.get(url)
+    if r.status_code != 200:
+        return None
+    return r.json()
+    
+
+
+
+lottie_hello = load_lottieurl("https://assets3.lottiefiles.com/packages/lf20_r3rzsy9v.json")
+
+
+
+
+st_lottie(lottie_hello, key = "hello")
 
 
 st.title("jahoperi Chusconoticias")
