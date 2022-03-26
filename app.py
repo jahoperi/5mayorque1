@@ -1,84 +1,159 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Mar 21 20:00:34 2022
-
-@author: jahop_fz60h0
-"""
-
-import json
+import pathlib 
+import shutil
 import streamlit as st
-from streamlit_lottie import st_lottie  # pip install streamlit-lottie
 import streamlit.components.v1 as components
-import requests  # pip install requests
 
-def load_lottieurl(url: str):
-    r = requests.get(url)
-    if r.status_code != 200:
-        return None
-    return r.json()
+
+
+
+st.title("jahoperi Chusconoticias")
+st.subheader('')
+st.header('5 es menor que 1 ? ----------ó bien')
+st.subheader('')
+st.header('1 es mayor que 5 ?')
+st.subheader('Javier Horacio Pérez Ricárdez')    
+st.subheader('')
+st.subheader('Maestría en Ciencias de la Computación')
+st.subheader('')
+st.subheader('Cédula: 5290889')
+st.subheader('')
+st.subheader('Licenciatura en Matemáticas')
+st.subheader('')
+st.subheader('Cédula: 4431246')
+
+
+# HACK This only works when we've installed streamlit with pipenv, so the
+# permissions during install are the same as the running process
+STREAMLIT_STATIC_PATH = pathlib.Path(st.__path__[0]) / 'static'
+# We create a videos directory within the streamlit static asset directory
+# and we write output files to it
+VIDEOS_PATH = (STREAMLIT_STATIC_PATH / "videos")
+if not VIDEOS_PATH.is_dir():
+    VIDEOS_PATH.mkdir()
+
+uno_video = VIDEOS_PATH / "jahoperiChusconoticias.mp4"
+if not uno_video.exists():
+    shutil.copy("jahoperiChusconoticias.mp4", uno_video)  # For newer Python.
+
+
+
+st.subheader('')
+st.subheader('')
+st.subheader('')
+
+
+
+
+def main():
+    components.html("""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+.main-div h1
+{
+ font-size: 21px;
+}
+
+
+#color1{color:red;}
+#color2{color:blue;}
+#color3{color:pink;}
+</style>
+
+
+  </head>
+  <body>
+   <div class="main-div">
+    <video src = "videos/jahoperiChusconoticias.mp4" width="500" height="400" controls controlsList="nodownload"></video>
+<script type="text/javascript">
+//Script for disabling right click on mouse
+var message="Function Disabled!";
+function clickdsb(){
+if (event.button==2){
+alert(message);
+return false;
+}
+}
+function clickbsb(e){
+if (document.layers||document.getElementById&&!document.all){
+if (e.which==2||e.which==3){
+alert(message);
+return false;
+}
+}
+}
+if (document.layers){
+document.captureEvents(Event.MOUSEDOWN);
+document.onmousedown=clickbsb;
+}
+else if (document.all&&!document.getElementById){
+document.onmousedown=clickdsb;
+}
+document.oncontextmenu=new Function("alert(message);return false")
+</script>
+</div>
+</body>
+
+
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+
+<FONT FACE="impact" SIZE=6 COLOR="red">
+ jahoperi@gmail.com</FONT>
+ 
+ 
+ <p></p>
+ <p></p>
+ <p></p>
+ <p></p>
+ <p></p>
+ <p></p>
+ <p></p>
+ <p></p>
+ <p></p>
+ <p></p>
+ <p></p>
+ <p></p>
+ <p></p>
+ <p></p>
+ <p></p>
+ <p></p>
+ <p></p>
+ <p></p>
+ <p></p>
+ <p></p>
+ <p></p>
+ <p></p>
+ <p></p>
+ <p></p>
+ <p></p>
+ <p></p>
+ <p></p>
+ <p></p>
+ <p></p>
+ <p></p>
+ <p></p>
+ <p></p>
+ <p></p>
+ <p></p>
+ <p></p>
+ <p></p>
+ 
+
+</html>""", width=1300, height=550)
+
+
+
+
+
+if __name__ == "__main__":
+    main()
     
-
-
-
-lottie_hello = load_lottieurl("https://assets2.lottiefiles.com/packages/lf20_NEA1lt.json")
-lottie_hello1 = load_lottieurl("https://assets2.lottiefiles.com/packages/lf20_jlmgqgx2.json")
-
-
-
-
-st_lottie(lottie_hello, key = "hello")
-st_lottie(lottie_hello1, key = "hello1")
-
-
-
-st.title("De México para el mundo, listo el Aeropuerto Internacional Felipe Ángeles")
-
-
-st.subheader("")
-
-
-st.subheader("Las mejores frases")
-
-st.subheader("")
-
-st.subheader("Haiga sido como haiga sido.................. ya está en servicio el Aeropueto Internacional Felipe Ángeles")
-
-st.subheader("")
-
-st.subheader("Comes y te vas,.......... desde el Aeropuerto Felipe Ángeles")
-
-st.subheader("")
-
-st.subheader("Defenderé el Aeropuerto Internacional Felipe Ángeles, ...........como un perro")
-
-st.subheader("")
-
-st.subheader("No se hagan bolas,............. todos tomarán su vuelo desde el Aeropuerto Internacional Felipe Ángeles")
-
-st.subheader("")
-
-st.subheader("El que se mueve no sale en la foto,......... de la inauguración del Aeropuerto Felipe Ángeles")
-
-st.subheader("")
-
-st.subheader("Gracias mi rey,.................... por el Aeropuerto Internacional Felipe Ángeles")
-
-st.subheader("")
-
-st.subheader("NO TE CALIENTES GRANIZO,........ QUE YA ESTÁ FUNCIONANDO EL AEROPUERTO INTERNACIONAL FELIPE ÁNGELES")
-
-st.subheader("")
-
-st.subheader("Si te vas de viaje,..............zumbale por tu boleto al Aeropuerto Felipe Ángeles")
-
-st.subheader("")
-
-st.subheader("adiuuuuuuu, nos vemos en la próxima")
-
-st.subheader("")
-st.subheader("jahoperi chusconoticias")
-st.subheader("")
-st.subheader("21 de marzo del 2022")
-st.subheader("")
-st.subheader("jahoperi@gmail.com")
 
